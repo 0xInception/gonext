@@ -1,4 +1,4 @@
-# gonext
+# gonext (v0.1.1)
 GoNext is a simple wrapper for riot's api with ratelimiting support written in go.
 
 ### TODO:
