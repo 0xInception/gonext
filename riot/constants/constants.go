@@ -1,6 +1,10 @@
 package constants
 
+import "strings"
+
 type Region string
+
+// Technically, Region = EUNE, Platform = eun1
 
 const (
 	BR   Region = "br1"
@@ -21,3 +25,29 @@ const (
 	TW   Region = "tw2"
 	VN   Region = "vn2"
 )
+
+var regionMap = map[string]Region{
+	"BR":   BR,
+	"EUNE": EUNE,
+	"EUW":  EUW,
+	"JP":   JP,
+	"KR":   KR,
+	"LAN":  LAN,
+	"LAS":  LAS,
+	"NA":   NA,
+	"OCE":  OCE,
+	"PBE":  PBE,
+	"PH":   PH,
+	"RU":   RU,
+	"SG":   SG,
+	"TH":   TH,
+	"TR":   TR,
+	"TW":   TW,
+	"VN":   VN,
+}
+
+// GetRegionByString You can provide a region string such as `EUNE` and it will
+// return the equivalent constant value `eun1`
+func GetRegionByString(str string) Region {
+	return regionMap[strings.ToUpper(str)]
+}
